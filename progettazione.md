@@ -218,3 +218,12 @@ Scrivimi e raccontami la tua idea.
 - Form con invio funzionante.
 - CV in PDF.
 - Pubblicazione con GitHub Pages.
+
+## Lingue
+- Portfolio disponibile in italiano e inglese.
+- Pagine italiane nella cartella principale.
+- Pagine inglesi nella sottocartella en.
+- Selettore della lingua nell’intestazione di tutte le pagine.
+- Passaggio tra versioni corrispondenti della stessa pagina.
+- Contenuti inglesi tradotti e revisionati dopo quelli italiani.
+- Attributo lang coerente con la lingua di ciascuna pagina.
