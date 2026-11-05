@@ -227,3 +227,14 @@ Scrivimi e raccontami la tua idea.
 - Passaggio tra versioni corrispondenti della stessa pagina.
 - Contenuti inglesi tradotti e revisionati dopo quelli italiani.
 - Attributo lang coerente con la lingua di ciascuna pagina.
+
+## Implementazione completa — revisione del 4 novembre 2026
+- Tre pagine in italiano e inglese, con navigazione mobile sticky.
+- Design dark/Web3 con illustrazioni SVG, griglia Bootstrap locale e stili Sass.
+- Space Grotesk locale, favicon e copertina social.
+- Form che prepara una bozza email; invio diretto non configurato.
+- CV HTML e PDF originale; report Ethereum originale consultabile.
+- Prima della pubblicazione: privacy, verifica dati CV e URL social definitivi.
+
+## Vincolo HTML e CSS
+JavaScript rimosso. Menu mobile gestito con checkbox e CSS :checked. Modulo con validazione HTML nativa e azione mailto; richiede un client di posta configurato. Nessun invio diretto server.

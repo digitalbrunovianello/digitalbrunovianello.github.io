@@ -1,0 +1,12 @@
+{
+  "name": "bruno-vianello-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build:css": "sass assets/scss/style.scss assets/css/style.css --style=compressed --no-source-map",
+    "watch:css": "sass assets/scss/style.scss assets/css/style.css --watch"
+  },
+  "devDependencies": {
+    "sass": "1.93.2"
+  }
+}
