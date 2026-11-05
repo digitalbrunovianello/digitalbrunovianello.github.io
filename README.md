@@ -1,27 +1,59 @@
 # Bruno Vianello — Portfolio
 
-Portfolio statico in italiano e inglese, pronto per GitHub Pages.
+Il mio portfolio personale, dedicato al percorso dal digital marketing allo sviluppo web e blockchain.
 
-## Struttura
+Raccoglie la mia presentazione professionale, le competenze e una selezione di progetti: Qi Watch, copywriting e sperimentazione nell’ecosistema Ethereum.
+
+**[Visita il portfolio](https://digitalbrunovianello.github.io/portfolio-personale/)**
+
+## Il progetto
+
+Ho scelto uno stile dark con accenti azzurri e richiami visivi a Ethereum, per rappresentare il mio interesse per il Web3.
+
+Il sito è disponibile in italiano e inglese e comprende tre pagine:
+
+- **Home:** presentazione, aree di attività e progetti.
+- **CV:** esperienze, competenze e formazione in formato HTML.
+- **Contatti:** form e collegamenti professionali.
+
+## Tecnologie
+
+- HTML semantico.
+- CSS con Sass.
+- Griglia Bootstrap.
+- Flexbox e CSS Grid.
+- Media query per adattare il layout ai diversi schermi.
+
+Il menu mobile utilizza una checkbox e il selettore CSS `:checked`, senza JavaScript. Il font Space Grotesk è ospitato localmente.
+
+## Struttura dei file
+
 - `index.html`, `cv.html`, `contatti.html`: pagine italiane.
-- `en/`: versioni inglesi.
-- `assets/scss/style.scss`: sorgente degli stili Sass.
-- `assets/css/style.css`: CSS compilato, da pubblicare insieme al sito.
-- `assets/vendor/bootstrap-grid.min.css`: griglia Bootstrap locale (vedi licenza allegata).
-- `assets/fonts/`: Space Grotesk locale con licenza OFL.
-- `assets/docs/`: report Ethereum e CV originale forniti dall’autore.
+- `en/`: pagine inglesi.
+- `assets/scss/`: sorgente Sass.
+- `assets/css/`: CSS compilato.
+- `assets/img/`: immagini, favicon e copertina social.
+- `assets/fonts/`: font e relativa licenza.
+- `assets/docs/`: CV e report Ethereum.
+- `assets/vendor/`: griglia Bootstrap e relativa licenza.
 
-## Stili
-Installare le dipendenze con `npm install`, poi eseguire `npm run build:css` dopo aver modificato Sass. `npm run watch:css` aggiorna il CSS durante il lavoro. Nessun comando è necessario per visitare il sito già compilato.
+## Compilazione Sass
 
-## Contatti
-Il sito usa esclusivamente HTML e CSS, senza JavaScript. Il menu mobile è controllato da una checkbox e dal selettore CSS `:checked`, utilizzabile anche da tastiera. La validazione del modulo è nativa HTML (`required`, `type="email"`). L’azione `mailto:` richiede un’app di posta configurata: il recapito e la composizione dei dati dipendono dal browser e dal client. Il collegamento email diretto offre un’alternativa. Non è implementato invio server. Sass è soltanto uno strumento di compilazione in sviluppo: il sito pubblicato carica HTML e CSS.
+Il sorgente degli stili si trova in `assets/scss/style.scss`.
+È necessario avere Node.js e npm installati.
+Per installare Sass e generare il CSS, eseguire dalla cartella principale del progetto:
 
-## Prima della pubblicazione
-- Verificare date, ruoli e livelli di competenza del CV con l’autore; il PDF conserva il curriculum originale fornito.
-- Aggiungere una privacy policy coerente con i servizi effettivamente utilizzati: il link non è stato inventato.
-- Impostare il dominio definitivo e aggiornare `og:image` con l’URL pubblico assoluto; aggiungere canonical, og:url e hreflang assoluti per ogni pagina.
-- La copertina `assets/img/social-cover.png` è pronta; il comportamento social va verificato dopo la pubblicazione.
-- GitHub Pages: pubblicazione dal ramo scelto, cartella radice. Le risorse sono relative e funzionano anche in un project site.
-- Nessuna modifica ai DNS o al servizio email è stata effettuata.
-- Le illustrazioni sono rappresentazioni grafiche editoriali, non fotografie o screenshot dei prodotti.
+```bash
+npm install
+npm run build:css
+```
+
+Il sito contiene già il CSS compilato: non occorre eseguire questi comandi per visitarlo.
+
+## Form di contatto
+
+Il form utilizza la validazione HTML e l’azione `mailto:`. Richiede un’app di posta configurata e non effettua invio diretto dal sito.
+
+## Pubblicazione
+
+Il sito è pubblicato con GitHub Pages dal ramo `main`, utilizzando la cartella principale del repository.

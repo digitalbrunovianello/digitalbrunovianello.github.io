@@ -94,7 +94,7 @@ p {
   color: #98a9bd;
 }
 
-.eyebrow, .micro-label, .art-label, .item-index, .timeline-date, .visual-label, .visual-caption, .terminal-name, .editorial-top, .editorial-bottom, .connection-card {
+.eyebrow, .micro-label, .art-label, .item-index, .timeline-date, .visual-caption, .terminal-name, .connection-card {
   font-family: "Consolas", "Courier New", monospace;
 }
 
@@ -616,26 +616,6 @@ p {
   border-bottom: 1px solid #233147;
 }
 
-.watch-visual {
-  display: flex;
-  justify-content: center;
-  background: #0b1b25;
-}
-
-.watch-visual svg {
-  height: 100%;
-  width: 100%;
-}
-
-.visual-label {
-  position: absolute;
-  bottom: 17px;
-  left: 24px;
-  font-size: 8px;
-  letter-spacing: 0.12em;
-  color: #7eabb6;
-}
-
 .project-small .project-copy {
   padding: 32px;
 }
@@ -651,32 +631,6 @@ p {
   color: #9eb9c5;
   font-size: 11px;
   margin-top: 24px;
-}
-
-.editorial-visual {
-  padding: 27px 32px;
-  background: #151c36;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.editorial-top, .editorial-bottom {
-  font-size: 9px;
-  letter-spacing: 0.1em;
-  color: #9a9fc3;
-}
-
-.editorial-word {
-  font-size: 52px;
-  letter-spacing: -0.06em;
-  line-height: 0.95;
-  color: #e8e7f8;
-}
-
-.editorial-word em {
-  color: #a4abed;
-  font-style: normal;
 }
 
 .about {
@@ -1061,16 +1015,6 @@ textarea {
   margin: 20px 0;
 }
 
-#form-status {
-  color: #b4d9e9;
-  font-size: 12px;
-  margin: 18px 0 0;
-}
-
-#form-status:empty {
-  display: none;
-}
-
 @keyframes float {
   0%, 100% {
     transform: scale(1.12) translateY(0);
@@ -1081,7 +1025,10 @@ textarea {
 }
 @media (min-width: 768px) {
   .main-nav {
-    display: flex !important;
+    display: flex;
+  }
+  .menu-checkbox {
+    display: none;
   }
 }
 @media (max-width: 991px) {
@@ -1278,7 +1225,7 @@ textarea {
     padding-bottom: 35px;
   }
   .page-intro h1 {
-    font-size: clamp(52px, 13vw, 75px);
+    font-size: clamp(48px, 13vw, 75px);
   }
   .lead {
     font-size: 17px;
@@ -1384,12 +1331,12 @@ textarea {
     display: block;
   }
 }
-
 /* Project artwork: keep logos and lettering visible at every screen size. */
 .project-image-visual {
   padding: 0;
   background: #0a1422;
 }
+
 .project-image {
   display: block;
   width: 100%;

@@ -24,20 +24,21 @@ Layout ordinato, testi leggibili e decorazioni essenziali.
 
 ## Colori
 - Sfondo principale: #0B1120 — blu notte.
-- Sfondo di schede e sezioni: #151E30 — blu scuro.
+- Sfondo delle schede: #101B2C — blu scuro.
 - Testo principale: #F1F5F9 — bianco freddo.
 - Testo secondario: #CBD5E1 — grigio chiaro.
 - Accento: #38BDF8 — azzurro elettrico.
 
 ## Tipografia
-- Font: Segoe UI, con alternative Arial e sans-serif.
+- Font: Space Grotesk locale, con alternative Arial e sans-serif.
 - Testo normale: dimensione di partenza 16 px.
-- Interlinea del testo: 1.6.
+- Interlinea del testo: 1.7.
 - Titoli: ben distinguibili, con dimensioni adattate allo schermo.
 - Paragrafi brevi e allineati a sinistra.
 
 ## Impaginazione
-- Contenuti centrati, con larghezza massima di 1120 px.
+- Contenitore centrato, con larghezza massima di 1200 px inclusi gli spazi interni.
+- Su desktop il contenuto utile arriva a 1120 px.
 - Spaziatura coerente tra elementi e sezioni.
 - Su mobile: contenuti disposti in una colonna.
 - Su desktop: griglie per aree di attività e progetti.
@@ -53,9 +54,7 @@ Layout ordinato, testi leggibili e decorazioni essenziali.
 ### 2. Presentazione iniziale
 - Titolo: Bruno Vianello.
 - Sottotitolo: Dal digital marketing allo sviluppo blockchain.
-- Introduzione: Strategia, codice e curiosità.
-  Racconto il mio percorso verso lo sviluppo blockchain
-  attraverso progetti, contenuti ed esperimenti.
+- Introduzione: Connetto strategia e tecnologia per accompagnare i brand nel Web3.
 - Azione principale: Esplora i progetti.
 - Azione secondaria: Contattami.
 
@@ -82,7 +81,7 @@ Ogni scheda presenterà:
 - Collegamento al lavoro, quando disponibile.
 
 Progetti da raccontare:
-- Qi Watch — progetto personale da riprendere ed evolvere.
+- Qi Watch — progetto personale in evoluzione verso un’esperienza digitale.
 - Blog e contenuti — selezione di articoli e lavori di digital marketing.
 - Progetto Ethereum — progetto di studio in ambito blockchain.
 
@@ -91,7 +90,7 @@ Da aggiungere al completamento:
 
 ### 5. Chi sono
 - Breve presentazione di interessi, percorso e metodo di lavoro.
-- Collegamento: Scopri il mio CV.
+- Collegamento: Scopri il mio percorso.
 
 ### 6. Invito al contatto
 - Testo: Hai un progetto o un'opportunità da condividere?
@@ -111,7 +110,7 @@ Da aggiungere al completamento:
 - Titolo: Il mio percorso.
 - Breve profilo: dal digital marketing alla formazione
   nello sviluppo web e blockchain.
-- Collegamento al CV PDF, da aggiungere quando disponibile.
+- Collegamento al CV PDF, disponibile come approfondimento.
 
 ### 3. Competenze
 - Digital marketing e contenuti: competenze maturate
@@ -137,7 +136,7 @@ Da aggiungere al completamento:
 - Evidenza del contributo personale e delle competenze applicate.
 
 ### 7. Invito al contatto
-- Testo: Vuoi approfondire il mio percorso?
+- Testo: Hai un progetto o un’opportunità da condividere?
 - Collegamento: Contattami.
 
 ### 8. Footer
@@ -159,9 +158,10 @@ Scrivimi e raccontami la tua idea.
 - Email: obbligatoria.
 - Messaggio: obbligatorio.
 - Etichette sempre visibili sopra i campi.
-- Pulsante: Invia messaggio.
+- Pulsante: Apri email.
 - Indicazioni chiare sui campi obbligatori.
-- Messaggi comprensibili di errore e conferma dell'invio.
+- Validazione nativa HTML dei campi obbligatori e del formato email.
+- Azione mailto: apertura dell’app di posta, senza conferma di invio dal sito.
 
 ### 4. Contatti diretti
 - Indirizzo email professionale.
@@ -188,7 +188,7 @@ Scrivimi e raccontami la tua idea.
 - Eventuali animazioni brevi e rispettose delle preferenze
   di movimento ridotto dell’utente.
 
-  ## Contenuti da preparare
+## Contenuti del portfolio
 
 ### Home
 - Breve biografia personale.
@@ -208,14 +208,14 @@ Scrivimi e raccontami la tua idea.
 - Email da rendere pubblica.
 - Collegamenti a LinkedIn e GitHub, se disponibili.
 
-## Elementi da realizzare nelle fasi successive
+## Tecnologie e funzionalità previste
 - Struttura HTML delle tre pagine.
 - Stili con Bootstrap e Sass.
 - Layout con Flexbox e Grid.
 - Navigazione sticky e menu mobile.
 - Adattamento a mobile, tablet e desktop.
 - Favicon e metadati Open Graph.
-- Form con invio funzionante.
+- Form HTML con azione mailto; servizio esterno di invio facoltativo e non utilizzato.
 - CV in PDF.
 - Pubblicazione con GitHub Pages.
 
@@ -234,7 +234,21 @@ Scrivimi e raccontami la tua idea.
 - Space Grotesk locale, favicon e copertina social.
 - Form che prepara una bozza email; invio diretto non configurato.
 - CV HTML e PDF originale; report Ethereum originale consultabile.
-- Prima della pubblicazione: privacy, verifica dati CV e URL social definitivi.
+- Pubblicazione prevista su GitHub Pages, senza modificare dominio o posta.
 
 ## Vincolo HTML e CSS
 JavaScript rimosso. Menu mobile gestito con checkbox e CSS :checked. Modulo con validazione HTML nativa e azione mailto; richiede un client di posta configurato. Nessun invio diretto server.
+
+## Revisione finale del 5 novembre 2026
+- Open Graph completati con immagine e URL assoluti GitHub Pages nelle sei pagine.
+- Canonical e hreflang impostati per le versioni italiana e inglese.
+- Dimensione minima del titolo mobile corretta per il CV inglese a 320 px.
+- Controlli delle sei pagine a 320, 375, 768 e 1440 px.
+- Presentazione PDF preparata con collegamenti al sito e al repository e dichiarazione del supporto AI.
+- Dominio ed email invariati; modulo mailto mantenuto per scelta.
+
+## Verifica finale prima della consegna
+- Form e menu realizzati esclusivamente in HTML e CSS.
+- Menu mobile verificato anche da tastiera; controllo nascosto escluso dal percorso di focus su desktop.
+- Testi e percorsi delle pagine italiane e inglesi controllati.
+- Compilazione Sass e corrispondenza con il CSS verificate.
