@@ -32,7 +32,7 @@ p { margin-bottom: 20px; }
 .container { width: 100%; max-width: 1200px; padding-inline: 40px; margin-inline: auto; }
 .accent { color: $accent; }
 .muted { color: $muted; }
-.eyebrow, .micro-label, .art-label, .item-index, .timeline-date, .visual-caption, .terminal-name, .connection-card { font-family: 'Consolas', 'Courier New', monospace; }
+.eyebrow, .micro-label, .item-index, .timeline-date, .visual-caption, .terminal-name, .connection-card { font-family: 'Consolas', 'Courier New', monospace; }
 .eyebrow { color: $accent; font-size: 11px; font-weight: 400; letter-spacing: .13em; line-height: 1.6; margin-bottom: 22px; }
 .status-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: $accent; box-shadow: 0 0 14px #38bdf84d; flex-shrink: 0; }
 .eyebrow .status-dot { margin-right: 9px; vertical-align: 1px; }
@@ -57,18 +57,31 @@ p { margin-bottom: 20px; }
 .menu-toggle { display: none; }
 .menu-checkbox:focus-visible + .menu-toggle { outline: 2px solid $accent; outline-offset: 5px; }
 
-.hero { position: relative; min-height: 740px; display: grid; grid-template-columns: 1.12fr 1fr; align-items: center; padding-top: 85px; padding-bottom: 90px; }
-.hero-copy { position: relative; z-index: 2; }
+.hero { position: relative; min-height: 740px; display: grid; grid-template-columns: 1.12fr 1fr; grid-template-areas: "eyebrow visual" "copy visual"; grid-template-rows: auto auto; align-content: center; align-items: center; padding-top: 85px; padding-bottom: 90px; }
+.hero > .hero-eyebrow { grid-area: eyebrow; }
+.hero-copy { grid-area: copy; position: relative; z-index: 2; }
 .hero h1 { font-size: clamp(70px, 8.4vw, 112px); line-height: .97; margin-bottom: 28px; font-weight: 500; }
 .hero-subtitle { font-size: clamp(21px, 2.2vw, 29px); line-height: 1.35; letter-spacing: -.03em; margin-bottom: 18px; }
 .hero-description { color: $muted; max-width: 380px; font-size: 16px; line-height: 1.7; margin-bottom: 30px; }
-.hero-visual { position: relative; min-width: 0; align-self: stretch; display: flex; align-items: center; }
-.hero-visual::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(#1f334344 1px, transparent 1px), linear-gradient(90deg, #1f334344 1px, transparent 1px); background-size: 46px 46px; mask-image: radial-gradient(ellipse, #000 10%, transparent 68%); }
+.hero-visual { grid-area: visual; position: relative; min-width: 0; align-self: stretch; display: flex; align-items: center; }
+/* Blend the supplied binary portrait into the page without altering the image. */
+.hero-portrait-visual {
+  justify-content: center;
+  isolation: isolate;
+  background: $bg;
+}
+.hero-portrait {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  mix-blend-mode: lighten;
+  mask-image: radial-gradient(ellipse 75% 75% at 50% 48%, #000 58%, transparent 84%);
+}
 .network-art { width: 100%; height: auto; overflow: visible; }
-.hero-visual .network-art { transform: scale(1.12); animation: float 10s ease-in-out infinite; }
-.art-label { position: absolute; color: #6e94a9; letter-spacing: .12em; font-size: 9px; }
-.art-label-top { top: 35px; right: 5px; }
-.art-label-bottom { bottom: 25px; left: 25px; }
+
+
+
 .hero-bottom { position: absolute; bottom: 25px; left: 40px; right: 40px; display: flex; justify-content: space-between; gap: 20px; font-size: 11px; color: #8094aa; border-top: 1px solid $border; padding-top: 20px; }
 .hero-bottom a { color: #b7c8da; }
 .actions { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -180,7 +193,6 @@ input:focus, textarea:focus { border-color: $accent; outline: 2px solid #38bdf84
 input::placeholder, textarea::placeholder { color: #8396ae; opacity: 1; }
 textarea { resize: vertical; min-height: 130px; }
 .form-note { color: #9aaec5; font-size: 11px; line-height: 1.8; margin: 20px 0; }
-@keyframes float { 0%,100% { transform: scale(1.12) translateY(0); } 50% { transform: scale(1.12) translateY(-10px); } }
 @media (min-width: 768px) {
   .main-nav { display: flex; }
   .menu-checkbox { display: none; }
@@ -208,15 +220,17 @@ textarea { resize: vertical; min-height: 130px; }
   .menu-checkbox:checked ~ .main-nav { display: flex; }
   .menu-toggle { cursor: pointer; display: inline-flex; gap: 12px; align-items: center; color: $text; background: none; border: 1px solid #34455c; padding: 9px 12px; border-radius: 3px; font-size: 12px; }
   .menu-lines { width: 17px; height: 10px; border-block: 1px solid currentColor; }
-  .hero { display: block; padding-top: 55px; padding-bottom: 70px; min-height: auto; }
+  .hero { display: flex; flex-direction: column; align-items: stretch; padding-top: 55px; padding-bottom: 70px; min-height: auto; }
   .hero .eyebrow { font-size: 9px; letter-spacing: .06em; }
+  .hero > .hero-eyebrow { margin-bottom: 0; }
   .hero h1 { font-size: clamp(67px, 17vw, 100px); }
   .hero-subtitle { font-size: 23px; }
   .hero-description { font-size: 15px; }
   .hero-visual { margin: 20px auto 15px; max-width: 400px; height: 320px; }
-  .hero-visual .network-art { max-height: 340px; }
-  .art-label-top { top: 5px; right: 8px; font-size: 8px; }
-  .art-label-bottom { bottom: 5px; font-size: 8px; }
+
+  .hero-portrait-visual { height: auto; max-width: 360px; margin: 18px auto 24px; }
+
+
   .hero-bottom { left: 22px; right: 22px; bottom: 18px; padding-top: 13px; font-size: 10px; }
   .hero-bottom > span { max-width: 180px; }
   .hero-bottom a { text-align: right; }
@@ -257,7 +271,7 @@ textarea { resize: vertical; min-height: 130px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .hero-visual .network-art { transform: none; }
+
 }
 @media print {
   body { background: white; color: #111; font-size: 11pt; }

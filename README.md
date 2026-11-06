@@ -8,7 +8,7 @@ Raccoglie la mia presentazione professionale, le competenze e una selezione di p
 
 ## Il progetto
 
-Ho scelto uno stile dark con accenti azzurri e richiami visivi a Ethereum, per rappresentare il mio interesse per il Web3.
+Ho scelto uno stile dark con accenti azzurri e richiami visivi a Ethereum, per rappresentare il mio interesse per il Web3. Nella Home ho inserito un ritratto personale composto da cifre binarie, rielaborato con supporto AI e integrato nello sfondo tramite CSS.
 
 Il sito è disponibile in italiano e inglese e comprende tre pagine:
 

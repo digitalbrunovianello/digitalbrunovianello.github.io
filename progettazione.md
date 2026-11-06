@@ -257,3 +257,15 @@ JavaScript rimosso. Menu mobile gestito con checkbox e CSS :checked. Modulo con 
 - Repository: https://github.com/digitalbrunovianello/digitalbrunovianello.github.io
 - Sito: https://digitalbrunovianello.github.io/
 - Ramo principale invariato: main.
+
+## Ritratto nella presentazione iniziale
+- Ritratto personale composto da cifre binarie, realizzato con supporto AI.
+- Integrazione tramite CSS con mix-blend-mode: lighten e maschera sfumata, senza alterare il file originale.
+- Immagine alternativa alla grafica Ethereum nella sola presentazione iniziale, in italiano e inglese.
+- Illustrazione Ethereum mantenuta nella scheda del progetto.
+
+## Ordine della presentazione su mobile
+- Etichetta Digital strategy / Web3 development.
+- Ritratto binario.
+- Nome, sottotitolo, descrizione e pulsanti.
+- Su desktop il testo rimane a sinistra e il ritratto a destra.

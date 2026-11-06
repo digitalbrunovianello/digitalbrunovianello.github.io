@@ -94,7 +94,7 @@ p {
   color: #98a9bd;
 }
 
-.eyebrow, .micro-label, .art-label, .item-index, .timeline-date, .visual-caption, .terminal-name, .connection-card {
+.eyebrow, .micro-label, .item-index, .timeline-date, .visual-caption, .terminal-name, .connection-card {
   font-family: "Consolas", "Courier New", monospace;
 }
 
@@ -254,12 +254,20 @@ p {
   min-height: 740px;
   display: grid;
   grid-template-columns: 1.12fr 1fr;
+  grid-template-areas: "eyebrow visual" "copy visual";
+  grid-template-rows: auto auto;
+  align-content: center;
   align-items: center;
   padding-top: 85px;
   padding-bottom: 90px;
 }
 
+.hero > .hero-eyebrow {
+  grid-area: eyebrow;
+}
+
 .hero-copy {
+  grid-area: copy;
   position: relative;
   z-index: 2;
 }
@@ -287,6 +295,7 @@ p {
 }
 
 .hero-visual {
+  grid-area: visual;
   position: relative;
   min-width: 0;
   align-self: stretch;
@@ -294,41 +303,26 @@ p {
   align-items: center;
 }
 
-.hero-visual::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(rgba(31, 51, 67, 0.2666666667) 1px, transparent 1px), linear-gradient(90deg, rgba(31, 51, 67, 0.2666666667) 1px, transparent 1px);
-  background-size: 46px 46px;
-  mask-image: radial-gradient(ellipse, #000 10%, transparent 68%);
+/* Blend the supplied binary portrait into the page without altering the image. */
+.hero-portrait-visual {
+  justify-content: center;
+  isolation: isolate;
+  background: #0b1120;
+}
+
+.hero-portrait {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  mix-blend-mode: lighten;
+  mask-image: radial-gradient(ellipse 75% 75% at 50% 48%, #000 58%, transparent 84%);
 }
 
 .network-art {
   width: 100%;
   height: auto;
   overflow: visible;
-}
-
-.hero-visual .network-art {
-  transform: scale(1.12);
-  animation: float 10s ease-in-out infinite;
-}
-
-.art-label {
-  position: absolute;
-  color: #6e94a9;
-  letter-spacing: 0.12em;
-  font-size: 9px;
-}
-
-.art-label-top {
-  top: 35px;
-  right: 5px;
-}
-
-.art-label-bottom {
-  bottom: 25px;
-  left: 25px;
 }
 
 .hero-bottom {
@@ -1015,14 +1009,6 @@ textarea {
   margin: 20px 0;
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: scale(1.12) translateY(0);
-  }
-  50% {
-    transform: scale(1.12) translateY(-10px);
-  }
-}
 @media (min-width: 768px) {
   .main-nav {
     display: flex;
@@ -1113,7 +1099,9 @@ textarea {
     border-block: 1px solid currentColor;
   }
   .hero {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     padding-top: 55px;
     padding-bottom: 70px;
     min-height: auto;
@@ -1121,6 +1109,9 @@ textarea {
   .hero .eyebrow {
     font-size: 9px;
     letter-spacing: 0.06em;
+  }
+  .hero > .hero-eyebrow {
+    margin-bottom: 0;
   }
   .hero h1 {
     font-size: clamp(67px, 17vw, 100px);
@@ -1136,17 +1127,10 @@ textarea {
     max-width: 400px;
     height: 320px;
   }
-  .hero-visual .network-art {
-    max-height: 340px;
-  }
-  .art-label-top {
-    top: 5px;
-    right: 8px;
-    font-size: 8px;
-  }
-  .art-label-bottom {
-    bottom: 5px;
-    font-size: 8px;
+  .hero-portrait-visual {
+    height: auto;
+    max-width: 360px;
+    margin: 18px auto 24px;
   }
   .hero-bottom {
     left: 22px;
@@ -1281,9 +1265,6 @@ textarea {
   *, *::before, *::after {
     animation: none !important;
     transition: none !important;
-  }
-  .hero-visual .network-art {
-    transform: none;
   }
 }
 @media print {
