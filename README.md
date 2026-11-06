@@ -4,7 +4,7 @@ Il mio portfolio personale, dedicato al percorso dal digital marketing allo svil
 
 Raccoglie la mia presentazione professionale, le competenze e una selezione di progetti: Qi Watch, copywriting e sperimentazione nell’ecosistema Ethereum.
 
-**[Visita il portfolio](https://digitalbrunovianello.github.io/portfolio-personale/)**
+**[Visita il portfolio](https://digitalbrunovianello.github.io/)**
 
 ## Il progetto
 

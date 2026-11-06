@@ -252,3 +252,8 @@ JavaScript rimosso. Menu mobile gestito con checkbox e CSS :checked. Modulo con 
 - Menu mobile verificato anche da tastiera; controllo nascosto escluso dal percorso di focus su desktop.
 - Testi e percorsi delle pagine italiane e inglesi controllati.
 - Compilazione Sass e corrispondenza con il CSS verificate.
+
+## Nome definitivo del repository
+- Repository: https://github.com/digitalbrunovianello/digitalbrunovianello.github.io
+- Sito: https://digitalbrunovianello.github.io/
+- Ramo principale invariato: main.
